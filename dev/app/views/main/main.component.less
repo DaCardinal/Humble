@@ -1,0 +1,105 @@
+@import url('../../../../app/res/assets/css/custom/electron-tabs/electron-tabs.css');
+@import url('../../../../app/res/assets/css/custom/electron-tabs/dragula.css');
+@import url('../../../../app/res/assets/css/custom/acc.css');
+@import url('../../../../app/res/assets/css/custom/style.css');
+
+.panel-group {
+
+    accordion-group {
+
+        .panel-default {
+            border:none;
+        }
+
+        .panel {
+            margin-bottom: 0;
+            background-color:transparent;
+            border:none;
+            border-radius: 0px;
+        }
+        
+        .panel-body {
+            border:none;
+            padding:0px;
+        }
+
+        .panel-default > .panel-heading + .panel-collapse > .panel-body,
+        .panel-group .panel-heading + .panel-collapse > .panel-body, 
+        .panel-group .panel-heading + .panel-collapse > .list-group {
+            border:none;
+        }
+
+        .panel-default > .panel-heading {
+            background-color: #333;
+            color: #444;
+            cursor: pointer;
+            padding: 5px 10px;
+            width: 300px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 11px;
+            transition: 0.4s;
+            font-weight: bold;
+            text-transform: uppercase;
+            border:none;
+            border-radius: 0px;
+
+
+            .panel-title {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 11px;
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+                color: #999999;
+                text-decoration: none;
+                width: 100%;
+
+                a {
+                    text-decoration: none;
+                }
+
+                a:before {
+                    content: "+";
+                    color: #777;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+                }
+
+                a[aria-expanded]:before {
+                    content: "+";
+                    color: #777;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .dropup > .panel-heading{
+            background: #373737;
+
+            .panel-title {
+
+                a:before {
+                    content: "\2212";
+                    color: #777;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+                }
+
+                a[aria-expanded]:before {
+                    content: "\2212";
+                    color: #777;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<section id="main-frame">
+  <div id="title-bar">
+    <div id="title">My Life For The Code</div>
+    <div id="title-bar-btns">
+      <button id="min-btn"><i class="fa fa-window-minimize"></i></button>
+      <button id="max-btn"><i class="fa fa-window-restore"></i></button>
+      <button id="close-btn"><i class="fa fa-close"></i></button>
+    </div>
+  </div>
+  <div id="content">
+      <div id="wrapper" class="toggled">
+        <!-- static sidebar -->
+        <app-add-banner [ads]="ads" [sidebar]="sidebar"></app-add-banner>
+        <!-- end of sidebar -->
+        <div id="page-frame" class="page-content-wrapper">
+          <div class="container-fluid">
+
+
+              <my-tabs>
+                <my-tab [tabTitle]="'People'" [isCloseable]="true">
+                  <people-list
+                    [people]="people"
+                    (addPerson)="onAddPerson()"
+                    (editPerson)="onEditPerson($event)">
+                  </people-list>
+                  <hr />
+                  <button class="btn btn-default" (click)="onOpenAbout()"><i class="glyphicon glyphicon-question-sign"></i> About this</button>
+                </my-tab>
+              </my-tabs>
+              
+              <ng-template let-person="person" #personEdit>
+                <person-edit [person]="person" (savePerson)="onPersonFormSubmit($event)"></person-edit>
+              </ng-template>
+              
+              <ng-template #about>
+                <p>
+                  Hi, I hope this demo was useful to learn more about dynamic components
+                  in Angular, in specific about <code>ViewContainerRef</code>,
+                  <code>ComponentResolverFactory</code> etc.
+                </p>
+                <p>
+                  Also check out the <a href="https://juristr.com/blog/2017/07/ng2-dynamic-tab-component/">according blog article</a>. You
+                  may also want to read the <a href="https://juristr.com/blog/2016/02/learning-ng2-creating-tab-component/">article about
+                  creating basic tabs with <code>@ContentChildren</code> and <code>@QueryList</code></a>.
+                </p>
+                <p>
+                  Visit me on <a href="https://twitter.com/juristr">Twitter</a> or on <a href="https://juristr.com/blog">blog</a>.
+                </p>
+              </ng-template>
+              
+              <!--<etabs-tabgroup>
+                  <etabs-tab heading="Tab1">
+                      <span>Content 1</span>
+                  </etabs-tab>
+                  <etabs-tab heading="Tab2">
+                      <span>Content 2</span>
+                  </etabs-tab>
+              </etabs-tabgroup>-->
+              <div class="etabs-tabgroup">
+                  <div class="etabs-tabs"></div>
+                  <div class="etabs-buttons"></div>
+              </div>
+              <div class="etabs-views"></div>
+              <div id="page-frame-content" class="row">
+                  {{content}}
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <div class="toolbar-bottom">
+      <div>
+        <p style="margin: -7px -1px;color: white; font-size: 11px;"> Test code </p>
+      </div>
+    <div class="pull-right">
+      <p style="margin: -7px -1px; color: white; font-size: 11px;"> Test code 0:11</p>
+    </div>
+  </div>
+</section>

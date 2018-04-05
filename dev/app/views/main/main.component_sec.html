@@ -1,0 +1,6 @@
+<div>
+  <h2>Lets dynamically create some components!</h2>
+  <button (click)="createHelloWorldComponent()">Create Hello World</button>
+  <button (click)="createWorldHelloComponent()">Create World Hello</button>
+  <dynamic-component [componentData]="componentData" (childEvent)="test($event)"></dynamic-component>
+</div>

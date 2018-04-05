@@ -1,0 +1,13 @@
+<div class="sidebar-nav-header"><p>{{data.name}}</p></div>
+<ul class="sidebar-nav">
+    <section *ngFor="let elem of data.menu">
+        <li class="nav-header sidebar-brand sidebar-nav-accordion collapsed"  data-toggle="collapse" data-target="#test">
+            <a href="#">{{elem.item}}</a>
+        </li>
+        <ul class="nav nav-list sidebar-nav-accordion-panel" id="test">
+            <li *ngFor="let itemChild of elem.list" (click)="vote(false)"> 
+                <span class="sidebar-item"><p class="sidebar-item-inner">{{itemChild.content}}</p></span>
+            </li>
+        </ul>
+    </section>
+</ul>

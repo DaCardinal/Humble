@@ -1,0 +1,12 @@
+<div class="sidebar-nav-header"><p>{{data.name}}</p></div>
+<ul class="sidebar-nav">
+    <accordion [closeOthers]="false">
+        <accordion-group *ngFor="let elem of data.menu; let i = index" heading="{{elem.item}}">
+            <ul class="nav nav-list sidebar-nav-accordion-panel" id="i">
+                <li *ngFor="let itemChild of elem.list" (click)="vote(false)"> 
+                    <span class="sidebar-item"><p class="sidebar-item-inner">{{itemChild.content}}</p></span>
+                </li>
+            </ul>
+        </accordion-group>
+    </accordion>
+</ul>
